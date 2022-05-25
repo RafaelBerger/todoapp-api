@@ -1,12 +1,16 @@
-module.exports = function (_req, res) {
-  const dadosFake = [
-    {
-      id: 1,
-      description: 'estudar javascript',
-      status: false,
-    },
-    { id: 2, description: 'estudar php (mentira)', status: false },
-    { id: 3, description: 'cansei de estudar', status: false },
-  ];
-  res.send({ dados: dadosFake });
+const TaskModel = require('../model/taskModel/taskModel');
+
+exports.getAllTasksData = async (_req, res) => {
+  const allTasks = await TaskModel.find({});
+  res.send({ dados: allTasks });
+};
+
+exports.createTaskData = async (req, res) => {
+  const { description } = req.body;
+
+  await TaskModel.create({
+    description,
+  });
+
+  res.send({ saved: true });
 };
