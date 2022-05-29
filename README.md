@@ -1,5 +1,5 @@
 ## variáveis de ambiente
 
-DBUSER
-DBPASSWORD
+DBUSER  
+DBPASSWORD  
 DBNAME
