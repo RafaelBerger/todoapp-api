@@ -14,3 +14,11 @@ exports.createTaskData = async (req, res) => {
 
   res.send({ saved: true });
 };
+
+exports.deleteTaskData = async (req, res) => {
+  const { id } = req.params;
+
+  await TaskModel.deleteOne({ _id: id });
+
+  res.end();
+};
