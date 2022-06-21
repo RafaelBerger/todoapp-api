@@ -1,8 +1,14 @@
-const TaskModel = require('../model/taskModel/taskModel');
+const TaskModel = require("../model/taskModel/taskModel");
 
 exports.getAllTasksData = async (_req, res) => {
   const allTasks = await TaskModel.find({ status: false });
   res.send({ dados: allTasks });
+};
+
+exports.getDoneTasksData = async (_req, res) => {
+  const doneTasks = await TaskModel.find({ status: true });
+
+  res.send({ dados: doneTasks });
 };
 
 exports.createTaskData = async (req, res) => {
