@@ -1,8 +1,7 @@
 ## Environment Variables
 
 - DBUSER  
-- DBPASSWORD  
-- DBNAME
+- DBPASSWORD 
 
 # Todo App
 
