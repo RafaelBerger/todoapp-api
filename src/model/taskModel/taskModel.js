@@ -3,19 +3,14 @@ const { Schema } = mongoose;
 
 const taskSchema = new Schema(
   {
-    id: {
-      primaryKey: true,
-      type: Number,
-    },
+    id: Number,
     description: String,
     status: {
       type: Boolean,
       default: false,
     },
   },
-  {
-    timestamps: false,
-  }
+  { timestamps: false }
 );
 
-module.exports = mongoose.model('tasks', taskSchema);
+module.exports = mongoose.model('Task', taskSchema);

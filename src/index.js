@@ -4,7 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const MONGOURI = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@cluster0.qkmtj.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+
+const MONGOURI = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@todo.0gfixmx.mongodb.net/?retryWrites=true&w=majority&appName=todo`
 
 const main = async () => {
   await mongoose.connect(MONGOURI, function (err) {
