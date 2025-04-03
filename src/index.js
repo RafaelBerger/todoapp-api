@@ -27,6 +27,8 @@ app.use(express.json());
 
 app.use('/', taskRouters);
 
-app.listen(8080, () => {
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, '0.0.0.0', () => {
   console.log('Servidor de pé');
 });
